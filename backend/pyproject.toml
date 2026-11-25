@@ -1,0 +1,21 @@
+[project]
+name = "hightech-backend"
+version = "1.0.0"
+description = "High Tech retail & wholesale referral API (Flask)"
+requires-python = ">=3.11"
+dependencies = ["Flask>=3.1,<4", "SQLAlchemy>=2.0,<3", "gunicorn>=23"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # Arabic text is intentional

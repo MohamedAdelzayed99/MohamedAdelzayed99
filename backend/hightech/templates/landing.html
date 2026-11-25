@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ app_name }}</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#0b2447;color:#fff;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}
+    .c{max-width:420px;padding:24px}
+    .code{font-size:28px;letter-spacing:4px;background:#19376d;padding:12px 20px;border-radius:12px;display:inline-block;margin:12px 0}
+    a{display:block;margin:10px auto;padding:14px;border-radius:12px;background:#2f80ed;color:#fff;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="c">
+    <h1>{{ app_name }}</h1>
+    {% if inviter %}<p>دعاك <b>{{ inviter }}</b> للانضمام</p>{% else %}<p>انضم إلينا</p>{% endif %}
+    <p>كود الدعوة الخاص بك:</p>
+    <div class="code">{{ code }}</div>
+    <a href="{{ scheme }}://join?code={{ code }}">افتح التطبيق</a>
+    <a href="{{ play_url }}">حمّل من Google Play</a>
+    <a href="{{ appstore_url }}">حمّل من App Store</a>
+    <p style="opacity:.7;font-size:14px">اكتب الكود عند التسجيل لو لم يظهر تلقائيًا</p>
+  </div>
+</body>
+</html>
