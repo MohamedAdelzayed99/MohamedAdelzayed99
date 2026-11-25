@@ -1,10 +1,14 @@
 {
   "name": "hightech",
   "private": true,
-  "workspaces": ["packages/*", "server"],
+  "workspaces": [
+    "packages/*",
+    "admin",
+    "mobile"
+  ],
   "scripts": {
-    "test": "npm run test -w @hightech/commission && npm run test -w @hightech/server",
-    "dev:server": "npm run dev -w @hightech/server",
-    "dev:admin": "npm run dev -w @hightech/admin"
+    "test": "npm run test -w @hightech/commission && cd backend && .venv/bin/pytest",
+    "dev:admin": "npm run dev -w @hightech/admin",
+    "build:admin": "npm run build -w @hightech/admin"
   }
 }
