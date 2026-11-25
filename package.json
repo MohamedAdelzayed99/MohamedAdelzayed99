@@ -1,0 +1,10 @@
+{
+  "name": "hightech",
+  "private": true,
+  "workspaces": ["packages/*", "server"],
+  "scripts": {
+    "test": "npm run test -w @hightech/commission && npm run test -w @hightech/server",
+    "dev:server": "npm run dev -w @hightech/server",
+    "dev:admin": "npm run dev -w @hightech/admin"
+  }
+}
